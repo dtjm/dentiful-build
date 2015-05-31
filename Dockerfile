@@ -12,5 +12,9 @@ RUN unzip phantomjs-2.0.0-20150528-u1404-x86_64.zip
 RUN rm -v phantomjs-2.0.0-20150528-u1404-x86_64.zip
 RUN mv phantomjs-2.0.0-20150528 /opt/phantomjs
 
-ENV PATH=/opt/phantomjs/bin:/usr/local/go/bin:$PATH
+# Install Node.js
+RUN curl http://nodejs.org/dist/v0.12.4/node-v0.12.4-linux-x64.tar.gz | tar -zxvf -
+RUN mv node-v0.12.4-linux-x64 /opt/nodejs
+
+ENV PATH=/opt/phantomjs/bin:/usr/local/go/bin:/opt/nodejs/bin:$PATH
 
