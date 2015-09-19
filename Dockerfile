@@ -17,3 +17,5 @@ RUN curl http://nodejs.org/dist/v0.12.4/node-v0.12.4-linux-x64.tar.gz | tar -zxv
 	mv node-v0.12.4-linux-x64 /opt/nodejs
 
 ENV PATH=/opt/phantomjs/bin:/usr/local/go/bin:/opt/nodejs/bin:$PATH
+
+RUN apt-get update && apt-get install -y git
